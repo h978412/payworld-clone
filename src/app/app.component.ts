@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './service/authentication/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'payworld-clone';
+  title = 'trial1';
+
+  constructor(public authenticationService: AuthenticationService){
+
+  } 
+  logout(){
+    this.authenticationService.logout();
+  }
 }

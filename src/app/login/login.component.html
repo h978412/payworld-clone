@@ -1,0 +1,26 @@
+<div class = "login-wrapper">
+    <div class = "card">
+        <div class = "card-body">
+            <form class="form-signin" (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+                <!-- <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+                 <h1 class="h3 mb-3 font-weight-normal">Payworld Retailer Portal</h1>
+                
+                 <label for="inputEmail" class="sr-only">Email address</label>
+                
+                 <input type="email" id="inputEmail" (input)="onInput(signInForm)" name = "email" class="form-control" placeholder="Email address" required autofocus ngModel> 
+                
+                 <label for="inputPassword" class="sr-only">Password</label>
+                
+                 <input type="password" id="inputPassword" (input)="onInput(signInForm)" name= "password" class="form-control" placeholder="Password" required ngModel>
+                 
+                 <button class="btn btn-lg btn-primary btn-block" [disabled]="!isDisabled" type="submit" >Sign in</button>
+                 <button class="btn btn-lg btn-primary btn-block" (click)="redirectSignUp()"  type="button">Sign Up</button>
+                <!-- <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p> -->
+                <div class="alert alert-danger" role="alert" *ngIf="isFormInvalid">Please fill all the fields</div>
+                <div class="alert alert-danger" role="alert" *ngIf="areCredentialInvalid">Invalid email or password</div>
+               </form>
+        </div>
+    </div>
+    
+     
+</div>
